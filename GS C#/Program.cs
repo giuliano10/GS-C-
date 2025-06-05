@@ -79,7 +79,7 @@ namespace CyberImpactMonitor
                         return true;
                     }
 
-                    Console.WriteLine("❌ Credenciais inválidas. Tente novamente.\n");
+                    Console.WriteLine(" Credenciais inválidas. Tente novamente.\n");
                     Console.WriteLine("Pressione ENTER para voltar...");
                     Console.ReadLine();
                 }
@@ -92,7 +92,7 @@ namespace CyberImpactMonitor
 
                     if (string.IsNullOrWhiteSpace(novoUsuario) || string.IsNullOrWhiteSpace(novaSenha))
                     {
-                        Console.WriteLine("❌ Usuário ou senha inválidos.");
+                        Console.WriteLine(" Usuário ou senha inválidos.");
                         Console.WriteLine("Pressione ENTER para voltar...");
                         Console.ReadLine();
                         continue;
@@ -101,11 +101,11 @@ namespace CyberImpactMonitor
                     if (!usuarios.ContainsKey(novoUsuario))
                     {
                         usuarios[novoUsuario] = novaSenha;
-                        Console.WriteLine("✅ Usuário cadastrado com sucesso.");
+                        Console.WriteLine(" Usuário cadastrado com sucesso.");
                     }
                     else
                     {
-                        Console.WriteLine("❌ Usuário já existe.");
+                        Console.WriteLine(" Usuário já existe.");
                     }
 
                     Console.WriteLine("Pressione ENTER para voltar ao menu de login...");
@@ -113,7 +113,7 @@ namespace CyberImpactMonitor
                 }
                 else
                 {
-                    Console.WriteLine("❌ Opção inválida. Digite 1 ou 2.\n");
+                    Console.WriteLine(" Opção inválida. Digite 1 ou 2.\n");
                     Console.WriteLine("Pressione ENTER para tentar novamente...");
                     Console.ReadLine();
                 }
@@ -160,12 +160,12 @@ namespace CyberImpactMonitor
 
                     subestacoes[escolha - 1].MarcarFalha();
                     Log($"Falha registrada em {subestacoes[escolha - 1].Nome}");
-                    Console.WriteLine("⚠️ Falha registrada com sucesso!");
+                    Console.WriteLine("⚠ Falha registrada com sucesso!");
                     break;
                 }
                 catch
                 {
-                    Console.WriteLine("❌ Entrada inválida. Tente novamente.\n");
+                    Console.WriteLine(" Entrada inválida. Tente novamente.\n");
                 }
             }
         }
@@ -186,12 +186,12 @@ namespace CyberImpactMonitor
 
                     subestacoes[escolha - 1].Restaurar();
                     Log($"Subestação restaurada: {subestacoes[escolha - 1].Nome}");
-                    Console.WriteLine("✅ Subestação restaurada com sucesso!");
+                    Console.WriteLine(" Subestação restaurada com sucesso!");
                     break;
                 }
                 catch
                 {
-                    Console.WriteLine("❌ Entrada inválida. Tente novamente.\n");
+                    Console.WriteLine(" Entrada inválida. Tente novamente.\n");
                 }
             }
         }
@@ -215,7 +215,7 @@ namespace CyberImpactMonitor
             foreach (var s in subestacoes)
             {
                 if (s.AlertaCritico)
-                    Console.WriteLine($"🚨 {s.Nome} está em estado crítico!");
+                    Console.WriteLine($" {s.Nome} está em estado crítico!");
             }
         }
 
@@ -242,7 +242,7 @@ namespace CyberImpactMonitor
                         sw.WriteLine(log);
                 }
 
-                Console.WriteLine($"📄 Relatório gerado: {nomeArquivo}");
+                Console.WriteLine($" Relatório gerado: {nomeArquivo}");
                 Log("Relatório gerado");
             }
             catch (Exception ex)
