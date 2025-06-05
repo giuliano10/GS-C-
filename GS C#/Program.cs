@@ -160,7 +160,7 @@ namespace CyberImpactMonitor
 
                     subestacoes[escolha - 1].MarcarFalha();
                     Log($"Falha registrada em {subestacoes[escolha - 1].Nome}");
-                    Console.WriteLine("⚠ Falha registrada com sucesso!");
+                    Console.WriteLine(" Falha registrada com sucesso!");
                     break;
                 }
                 catch
